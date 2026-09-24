@@ -14,3 +14,8 @@
 
 ;; Tamaño/familia de fuente distinto al definido en modules/settings-config.el.
 ;; (set-face-attribute 'default nil :family "JetBrains Mono" :height 110)
+
+;; Agendas reales en .org (NUNCA metas aquí el `diary` — no es sintaxis org
+;; y rompe org-element con "Cache must be active"; el diary ya se carga solo
+;; vía `diary-file' si existe ~/.emacs.d/diary).
+;; (setq org-agenda-files '("~/Documentos/boardgames.org"))

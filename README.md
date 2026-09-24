@@ -57,8 +57,11 @@ org-roam, ruta a binarios, fuente distinta, etc. Se carga al final de
 cambios interactivos, para no ensuciar el `custom.el` versionado.
 
 Si usas `org-agenda` con un diario personal, crea `~/.emacs.d/diary`
-(ignorado por git); si no existe, simplemente no se añade a
-`org-agenda-files`.
+(ignorado por git, formato diary de Emacs, no org); si existe, `init.el` lo
+asigna a `diary-file` automáticamente. Para agendas reales en `.org`, añade
+tus rutas a `org-agenda-files` desde `init-local.el` — nunca metas el
+`diary` ahí directamente, org intenta parsearlo como org y falla con
+`"Cache must be active"`.
 
 ## Estructura
 

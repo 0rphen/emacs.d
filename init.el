@@ -27,9 +27,14 @@
 (add-to-list 'load-path (expand-file-name "modules/meow/" user-emacs-directory))
 
 (require 'treemacs-config)
-(let ((diary-file (expand-file-name "diary" user-emacs-directory)))
-  (when (file-exists-p diary-file)
-    (setq org-agenda-files (list diary-file))))
+;; NOTE: the plain-text diary is NOT org syntax, so it must never be added to
+;; `org-agenda-files' (org would try to org-element-parse it and fail with
+;; "Cache must be active"). Point `diary-file' at it and pull it in via
+;; `org-agenda-include-diary'; real .org agenda files go in `org-agenda-files'
+;; via init-local.el.
+(let ((diary-path (expand-file-name "diary" user-emacs-directory)))
+  (when (file-exists-p diary-path)
+    (setq diary-file diary-path)))
 (use-package org
   :config
   (setq org-agenda-include-diary t))
