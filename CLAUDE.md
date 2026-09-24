@@ -52,11 +52,19 @@ Interactively: `M-x eval-buffer` on a module, or restart Emacs and check `*Messa
   there instead of dirtying the tracked file. Never hand-edit the `custom-set-variables` block in
   `custom.el` for machine-specific values — those belong in `init-local.el`.
 - **`init-local.el`** (gitignored, see `init-local.el.example`) — loaded last, for per-machine
-  overrides (real org-roam directory, CLI paths, font). Modules that need a machine-specific
-  value expose a `defvar` with a portable default (e.g. `my/org-roam-directory` in
-  `modules/org-roam-config.el`) that `init-local.el` can override, or resolve it dynamically via
-  `executable-find`/`expand-file-name` (e.g. `claude-code-ide-cli-path` in
-  `modules/claude-code-ide-config.el`, the Vue `tsdk` lookup in `modules/vue-config.el`).
+  overrides (real org-roam/denote directory, CLI paths, font). Modules that need a
+  machine-specific value expose a `defvar` with a portable default (e.g. `my/org-roam-directory`
+  in `modules/org-roam-config.el`, `my/denote-directory` in `modules/denote-config.el`) that
+  `init-local.el` can override, or resolve it dynamically via `executable-find`/`expand-file-name`
+  (e.g. `claude-code-ide-cli-path` in `modules/claude-code-ide-config.el`, the Vue `tsdk` lookup
+  in `modules/vue-config.el`). This override pattern only works for packages that defer their
+  actual load past startup (via `:bind`/`:mode`/`:hook` instead of `:demand`) — the `defvar`
+  default is what's active until the package's first real use, which for an interactive session
+  is always after `init-local.el` has already run.
+- **Two icon sets, split by surface, on purpose**: `nerd-icons` for dired/ibuffer/grep
+  (`modules/nerd-icons-config.el`), `all-the-icons` for completion (`all-the-icons-completion` in
+  `modules/all-the-icons-config.el`) plus treemacs/dashboard. Don't add `all-the-icons-dired` or
+  `nerd-icons-completion`-style overlap — pick whichever surface's existing set and extend that.
 - **`claude-code-ide-config.el`** installs `claude-code-ide` via `:vc` (from
   github.com/manzaltu/claude-code-ide.el) instead of MELPA — it needs `:ensure nil` alongside
   `:vc` since `use-package-always-ensure` is on globally.

@@ -50,6 +50,8 @@
 
 (require 'keychords-config)
 (require 'web-mode-config)
+(require 'emmet-config)
+(require 'nerd-icons-config)
 
 (require 'dashboard-config)
 (require 'centaur-config)
@@ -82,6 +84,14 @@
 (require 'solaire-config)
 (require 'fira-code-config)
 (require 'treesit-auto-config)
+(require 'ag-config)
+(require 'flycheck-config)
+(require 'ledger-config)
+(require 'denote-config)
+(require 'vterm-config)
+(require 'yasnippet-config)
+(require 'yaml-config)
+(require 'flutter-config)
 
 ;; Machine-specific overrides (not tracked in git). See init-local.el.example.
 (let ((local-init (expand-file-name "init-local.el" user-emacs-directory)))

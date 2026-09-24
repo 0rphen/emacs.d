@@ -27,4 +27,8 @@
   :ensure t
   :config (treemacs-set-scope-type 'Tabs))
 
+(use-package treemacs-magit
+  :ensure t
+  :after (treemacs magit))
+
 (provide 'treemacs-config)

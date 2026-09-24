@@ -19,7 +19,9 @@ gramáticas de tree-sitter:
 M-x treesit-auto-install-all
 ```
 
-Y opcionalmente los iconos:
+La config usa **dos sets de iconos a propósito, sin solaparse**: `nerd-icons`
+en dired/ibuffer/grep, y `all-the-icons` en completion (vertico/marginalia)
+y en treemacs/dashboard. Hacen falta las dos instalaciones de fuentes:
 
 ```
 M-x nerd-icons-install-fonts
@@ -37,12 +39,15 @@ M-x all-the-icons-install-fonts
 
 ### Opcionales, según lo que uses
 
-- `ag` (the silver searcher).
-- `ledger` — solo para los reportes de `ledger-reports` en `custom.el`.
-- `cmake` + `libtool` — para compilar el módulo dinámico de `vterm`.
+- `ag` (the silver searcher) — usado por `modules/ag-config.el` (`C-c a g/p/r`).
+- `ledger` — para `M-x ledger-mode` y los `ledger-reports` en `custom.el`.
+- `cmake` + `libtool` — para compilar el módulo dinámico de `vterm` (`C-c v`).
 - Servidores LSP que necesites vía `eglot`: `vue-language-server`,
-  `typescript-language-server`/`typescript` global, `pyright`, `dart`,
-  `clangd`, etc.
+  `typescript-language-server`/`typescript` global, `pyright`, `dart` (el SDK
+  de Dart trae su propio `language-server`), `clangd`, etc.
+- SDK de [Flutter](https://flutter.dev) — para `modules/flutter-config.el`
+  (`C-c f r/a/t` en buffers `dart-mode`; el propio SDK ya trae el `dart`
+  language server que usa eglot).
 - CLI de [`claude-code-ide`](https://github.com/manzaltu/claude-code-ide.el)
   (`claude`), si no está en tu `PATH` ajusta la ruta en `init-local.el`.
 
@@ -50,8 +55,8 @@ M-x all-the-icons-install-fonts
 
 Copia `init-local.el.example` a `init-local.el` (ignorado por git) para
 overrides que no quieres compartir entre equipos: directorio real de
-org-roam, ruta a binarios, fuente distinta, etc. Se carga al final de
-`init.el`.
+org-roam/denote, ruta a binarios, fuente distinta, etc. Se carga al final
+de `init.el`.
 
 `custom-local.el` (también ignorado) es a donde `M-x customize` escribe sus
 cambios interactivos, para no ensuciar el `custom.el` versionado.
