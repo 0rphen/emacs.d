@@ -1,0 +1,16 @@
+;; -*- lexical-binding: t; -*-
+;; Copia este archivo a init-local.el (ignorado por git) para overrides por
+;; máquina. Se carga al final de init.el, después de todos los módulos.
+
+;; Directorio real de tus notas de org-roam (por defecto: ~/org-roam).
+;; (setq my/org-roam-directory (expand-file-name "~/Documentos/roamNotes"))
+
+;; Ruta al binario de la CLI de Claude Code, si no está en PATH.
+;; (setq claude-code-ide-cli-path "/ruta/a/claude")
+
+;; tsdk de TypeScript para el language server de Vue, si `npm root -g' no
+;; lo detecta correctamente.
+;; (setenv "VUE_TSDK" "/ruta/a/node_modules/typescript/lib")
+
+;; Tamaño/familia de fuente distinto al definido en modules/settings-config.el.
+;; (set-face-attribute 'default nil :family "JetBrains Mono" :height 110)

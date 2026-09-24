@@ -1,0 +1,39 @@
+# Paquetes y compilados
+/elpa/
+/eln-cache/
+/.cache/
+/tree-sitter/
+/transient/
+*.elc
+
+# Estado / caches de sesión
+/auto-save-list/
+/auto-saves/
+/backups/
+/persp-confs/
+/persp-state
+/eshell/
+/recentf
+/bookmarks
+/projects
+/projectile-bookmarks.eld
+/projectile-frecency.eld
+/session.*
+/.lsp-session-v1
+/.dap-breakpoints
+/.org-id-locations
+/org-roam.db
+/url/
+/request/
+
+# Configuración local por máquina y ruido de Custom
+/custom-local.el
+/init-local.el
+
+# Datos personales
+/diary
+
+# Temporales de Emacs
+\#*\#
+*~
+.\#*
