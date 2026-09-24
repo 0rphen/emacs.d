@@ -15,14 +15,16 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
-(add-to-list 'load-path (expand-file-name "modules/" user-emacs-directory))
+(eval-and-compile
+  (add-to-list 'load-path (expand-file-name "modules/" user-emacs-directory)))
 (require 'all-the-icons-config)
 
 (require 'doom-config)
 
 (add-to-list 'exec-path (expand-file-name "~/.local/bin"))
 (setenv "PATH" (concat (getenv "PATH") ":" (expand-file-name "~/.local/bin")))
-(add-to-list 'load-path (expand-file-name "modules/meow/" user-emacs-directory))
+(eval-and-compile
+  (add-to-list 'load-path (expand-file-name "modules/meow/" user-emacs-directory)))
 
 (require 'treemacs-config)
 ;; NOTE: the plain-text diary is NOT org syntax, so it must never be added to
@@ -30,6 +32,10 @@
 ;; "Cache must be active"). Point `diary-file' at it and pull it in via
 ;; `org-agenda-include-diary'; real .org agenda files go in `org-agenda-files'
 ;; via init-local.el.
+;; `defvar' here just tells the byte-compiler these belong to diary-lib/
+;; org-agenda (not yet loaded at this point); it doesn't force-load them.
+(defvar diary-file)
+(defvar org-agenda-include-diary)
 (let ((diary-path (expand-file-name "diary" user-emacs-directory)))
   (when (file-exists-p diary-path)
     (setq diary-file diary-path)))
@@ -97,3 +103,5 @@
 (let ((local-init (expand-file-name "init-local.el" user-emacs-directory)))
   (when (file-exists-p local-init)
     (load local-init)))
+
+;;; init.el ends here
