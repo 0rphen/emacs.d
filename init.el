@@ -16,9 +16,7 @@
 (setq use-package-always-ensure t)
 
 (add-to-list 'load-path (expand-file-name "modules/" user-emacs-directory))
-(use-package all-the-icons
-  :hook (dired-mode . all-the-icons-dired-mode))
-(use-package all-the-icons-dired)
+(require 'all-the-icons-config)
 
 (require 'doom-config)
 
@@ -50,11 +48,8 @@
 
 (require 'settings-config)
 
-(use-package use-package-chords :config (key-chord-mode 1))
-
-(use-package web-mode
-  :mode ("\\.html\\'" . web-mode)
-  :bind("C-c C-w" . web-mode-element-wrap))
+(require 'keychords-config)
+(require 'web-mode-config)
 
 (require 'dashboard-config)
 (require 'centaur-config)
@@ -81,18 +76,12 @@
 (require 'smerge-config)
 (require 'hl-config)
 (require 'claude-code-ide-config)
-(use-package persp-projectile :defer t)
-(use-package which-key :defer t :config (which-key-mode))
-(use-package blamer :bind("C-c f b" . blamer-mode))
-(use-package solaire-mode :config (solaire-global-mode +1))
-(use-package fira-code-mode
-  :custom (fira-code-mode-disabled-ligatures '("[]" "#{" "#(" "#_" "#_(" "x"))
-  :hook (prog-mode . fira-code-mode)
-  :config (fira-code-mode-set-font))
-(use-package treesit-auto
-  :config
-  (global-treesit-auto-mode))
-(use-package treesit-ispell)
+(require 'persp-projectile-config)
+(require 'which-key-config)
+(require 'blamer-config)
+(require 'solaire-config)
+(require 'fira-code-config)
+(require 'treesit-auto-config)
 
 ;; Machine-specific overrides (not tracked in git). See init-local.el.example.
 (let ((local-init (expand-file-name "init-local.el" user-emacs-directory)))

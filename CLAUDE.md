@@ -37,9 +37,11 @@ Interactively: `M-x eval-buffer` on a module, or restart Emacs and check `*Messa
   `require`s each module in sequence.
 - **`modules/*.el`** — one file per package/feature, each wrapping a single `use-package` block
   (or a few related ones) and ending in `(provide 'xxx-config)`. This is the pattern to follow
-  for new packages: create `modules/<name>-config.el`, `(provide '<name>-config)`, add
-  `(require '<name>-config)` to `init.el` in a sensible spot (theme/UI modules load early,
-  before things like `dashboard-config` that reference icons/faces from them).
+  for **every** package, no exceptions — never add a bare `use-package` directly in `init.el`:
+  create `modules/<name>-config.el`, `(provide '<name>-config)`, add `(require '<name>-config)`
+  to `init.el` in a sensible spot (theme/UI modules load early, before things like
+  `dashboard-config` that reference icons/faces from them; anything another module `require`s
+  directly at load time, like `web-mode-config` before `vue-config`, must be required earlier).
 - **`modules/settings-config.el`** — not a package wrapper; holds hand-written global settings
   (default font, UI chrome, keybindings, backup/autosave paths, `treesit-language-source-alist`).
   Loaded after `custom.el`/`custom-local.el`.
