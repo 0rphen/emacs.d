@@ -11,11 +11,11 @@
         doom-themes-enable-italic t)
   :config
   (load-theme 'doom-dracula t)
-  ;; (load-theme 'tron-legacy t)
   (doom-themes-visual-bell-config)
   (doom-themes-neotree-config)
-  (doom-themes-treemacs-config)
-  (doom-themes-org-config)
-  (setq doom-themes-treemacs-theme "doom-atom"))
+  ;; treemacs' icon theme is owned by modules/treemacs-config.el
+  ;; (treemacs-all-the-icons); don't call doom-themes-treemacs-config here,
+  ;; it would fight over the same treemacs-load-theme call.
+  (doom-themes-org-config))
 
 (provide 'doom-config)

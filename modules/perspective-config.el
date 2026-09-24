@@ -9,8 +9,7 @@
          ("C-c e p" . persp-prev))
   :init
   (setq persp-mode-prefix-key (kbd "C-c e"))
-  (setq persp-state-default-file "~/.emacs.d/persp-state")
-  :custom (persp-mode-prefix-key (kbd "C-c M-p"))
+  (setq persp-state-default-file (expand-file-name "persp-state" user-emacs-directory))
   :config
   (persp-mode))
 

@@ -6,10 +6,6 @@
   :ensure t
   :config (apheleia-global-mode +1))
 
-(use-package lorem-ipsum
-  :ensure t
-  :config (lorem-ipsum-use-default-bindings))
-
 (set-face-attribute 'default nil
                      :family "Fira Code"
                      :height 95)
