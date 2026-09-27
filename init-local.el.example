@@ -3,7 +3,18 @@
 ;; máquina. Se carga al final de init.el, después de todos los módulos.
 
 ;; Directorio real de tus notas de org-roam (por defecto: ~/org-roam).
+;; Setea también `org-roam-directory': el `:custom' del módulo ya se evaluó.
 ;; (setq my/org-roam-directory (expand-file-name "~/Documentos/roamNotes"))
+;; (setq org-roam-directory my/org-roam-directory)
+
+;; Los templates `(file "templates/...")' de org-capture se resuelven
+;; relativos a `org-directory' (por defecto ~/org).
+;; (setq org-directory my/org-roam-directory)
+
+;; Directorio real de tus notas de denote (por defecto: ~/denote).
+;; Setea también `denote-directory': el `:custom' del módulo ya se evaluó.
+;; (setq my/denote-directory (expand-file-name "~/Documentos/notes"))
+;; (setq denote-directory my/denote-directory)
 
 ;; Ruta al binario de la CLI de Claude Code, si no está en PATH.
 ;; (setq claude-code-ide-cli-path "/ruta/a/claude")
@@ -18,4 +29,6 @@
 ;; Agendas reales en .org (NUNCA metas aquí el `diary` — no es sintaxis org
 ;; y rompe org-element con "Cache must be active"; el diary ya se carga solo
 ;; vía `diary-file' si existe ~/.emacs.d/diary).
+;; Acepta archivos o directorios (un directorio incluye todos sus .org).
 ;; (setq org-agenda-files '("~/Documentos/boardgames.org"))
+;; (setq org-agenda-files (list my/org-roam-directory))

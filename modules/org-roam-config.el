@@ -2,9 +2,10 @@
 
 (defvar my/org-roam-directory (expand-file-name "~/org-roam")
   "Directory where org-roam notes live.
-Override in init-local.el (e.g. (setq my/org-roam-directory \"~/Documentos/roamNotes\"))
-before this module loads.")
-(make-directory my/org-roam-directory t)
+Override in init-local.el (e.g. (setq my/org-roam-directory \"~/Documentos/roamNotes\")).")
+;; Se crea en `after-init-hook' para respetar el override de init-local.el,
+;; que se carga después de este módulo.
+(add-hook 'after-init-hook (lambda () (make-directory my/org-roam-directory t)))
 
 (use-package org-roam
   :ensure t
