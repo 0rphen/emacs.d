@@ -26,7 +26,7 @@ Override in init-local.el (e.g. (setq my/org-roam-directory \"~/Documentos/roamN
         ("C-c n i" . org-roam-node-insert)
         :map org-mode-map
         ("C-M-i" . completion-at-point))
-  :config (org-roam-setup))
+  :config (org-roam-db-autosync-mode))
 
 (use-package org-roam-ui
   :after org-roam
