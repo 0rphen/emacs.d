@@ -32,3 +32,8 @@
 ;; Acepta archivos o directorios (un directorio incluye todos sus .org).
 ;; (setq org-agenda-files '("~/Documentos/boardgames.org"))
 ;; (setq org-agenda-files (list my/org-roam-directory))
+
+;; Archivo donde `org-capture' (C-c x) guarda tareas y eventos (por defecto:
+;; ~/org/agenda.org). Se crea solo si no existe; súmalo a `org-agenda-files'.
+;; (setq my/org-agenda-file (expand-file-name "~/Documentos/agenda.org"))
+;; (add-to-list 'org-agenda-files my/org-agenda-file)

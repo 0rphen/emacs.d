@@ -81,6 +81,7 @@
 (require 'multiplecursors-config)
 (require 'avy-config)
 (require 'org-roam-config)
+(require 'org-capture-config)
 (require 'smerge-config)
 (require 'hl-config)
 (require 'claude-code-ide-config)
