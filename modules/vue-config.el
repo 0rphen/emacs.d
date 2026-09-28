@@ -1,7 +1,6 @@
 ;; -*- lexical-binding: t; -*-
 
 (require 'web-mode)
-(require 'eglot)
 
 (define-derived-mode vue-web-mode web-mode "Vue"
   "Major mode for Vue single-file components, derived from `web-mode'.")
@@ -18,11 +17,14 @@
           (expand-file-name "typescript/lib" npm-root)))
       "/usr/lib/node_modules/typescript/lib"))
 
-(add-to-list 'eglot-server-programs
-             `(vue-web-mode . ("vue-language-server" "--stdio"
-                               :initializationOptions
-                               (:typescript
-                                (:tsdk ,(my/vue-typescript-tsdk))))))
+(defun my/vue-eglot-contact (&rest _)
+  "Eglot contact for the Vue language server.
+A function so `npm root -g' only runs when eglot starts, not at init."
+  `("vue-language-server" "--stdio"
+    :initializationOptions (:typescript (:tsdk ,(my/vue-typescript-tsdk)))))
+
+(with-eval-after-load 'eglot
+  (add-to-list 'eglot-server-programs '(vue-web-mode . my/vue-eglot-contact)))
 
 (add-hook 'vue-web-mode-hook #'eglot-ensure)
 
