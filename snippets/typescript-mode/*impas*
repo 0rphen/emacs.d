@@ -1,0 +1,5 @@
+# key: impas
+# name: impas
+# --
+import * as $2 from '$1';
+$0

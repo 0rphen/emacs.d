@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: vpath
+# key: vpath
+# --
+{
+	path: '${1:path}',
+	name: '${2:name}',
+	component: $0
+},

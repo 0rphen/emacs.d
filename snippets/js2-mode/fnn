@@ -1,0 +1,4 @@
+# key: fnn
+# name: fnn
+# --
+(${1:inputParams}) => $0

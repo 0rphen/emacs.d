@@ -1,0 +1,23 @@
+# -*- mode: snippet -*-
+# name: reducer
+# key: reducer
+# --
+import { createReducer, on } from '@ngrx/store';
+import * as ${2:name}Action from './${1:path_to_actions}';
+
+export interface State {
+       ${6:element}:${7:type}
+}
+
+export const initialState: State = {
+       $6:${8:default}
+}
+
+const _${3:reducer}Reducer = createReducer(
+      initialState,
+      on(${4:action}, (state, { ${5:items} }) => ({...state, $6: ${10:result}}))$0
+);
+
+export function $3Reducer(state, action) {
+       return _$3Reducer(state, action);
+}

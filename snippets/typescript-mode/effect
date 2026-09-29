@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: effect
+# key: effect
+# --
+${1:effectName}$ = createEffect(() => this._action$.pipe(
+		 ofType(${2:action}),
+		 mergeMap(() => ${3:serice+method}.pipe(
+		 	     map(${4:response} => ${5:actionResponse}(
+			     		       $0
+			     )),
+			     catchError(err => of(${6:errorAction}))
+		 ))
+));

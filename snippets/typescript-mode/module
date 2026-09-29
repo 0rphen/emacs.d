@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: module
+# key: mod
+# --
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+@NgModule({
+  declarations: [],
+  imports: [
+    CommonModule
+  ]
+})
+export class $1Module { }

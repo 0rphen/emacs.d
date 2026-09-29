@@ -1,0 +1,6 @@
+# key: describej
+# name: describej
+# --
+describe('${1:description}', () => {
+$0
+})

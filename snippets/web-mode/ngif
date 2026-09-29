@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: ngif
+# key: ngif
+# --
+*ngIf="$1"

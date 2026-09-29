@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: futureBldr
+# key: futureBldr
+# --
+FutureBuilder(
+	future: ${1:Future},
+	builder: (BuildContext context, AsyncSnapshot snapshot) {
+		 return $0;
+	},
+),

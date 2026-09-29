@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: importas
+# key: importas
+# --
+import * as ${2:nameModule} from '${1:path}'
+$0

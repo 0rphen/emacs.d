@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: impas
+# key: impas
+# --
+import * as $0 from '$1';

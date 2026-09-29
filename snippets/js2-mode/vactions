@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: vactions
+# key: vactions
+# --
+export const ${1:action} = async ({ commit }) => {
+       $0
+}

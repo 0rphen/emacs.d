@@ -1,0 +1,8 @@
+# key: composable
+# name: composable
+# --
+const ${1:composableName} = () => {
+      $0
+}
+
+export default $1

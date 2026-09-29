@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: testJest
+# key: testJest
+# --
+test('should ${1:...}', () => {
+   $0
+   expect($2)
+})

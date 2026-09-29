@@ -1,0 +1,6 @@
+# key: beaf
+# name: beaf
+# --
+${1:$$(yas-choose-value '("before" "after"))}${2:$$(yas-choose-value '("Each" "All"))}(${3:$$(yas-choose-value '(" " "async"))} () => {
+$0
+});

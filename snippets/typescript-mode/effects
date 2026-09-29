@@ -1,0 +1,20 @@
+# -*- mode: snippet -*-
+# name: effects
+# key: effects
+# --
+import { Injectable } from '@angular/core';
+
+import { Actions, createEffect, ofType } from '@ngrx/effects';
+import { mergeMap, map, catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
+
+import { $4 } from '${2:service route}';
+import * as ${4:action} from './${5:path_to_actions}';
+
+@Injectable()
+export class $1 {
+       constructor(private _action$: Actions,
+       private _${3:service}:${4:serviceName}) { }
+
+       $6
+}

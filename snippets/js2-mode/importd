@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: importd
+# key: importd
+# --
+import ${2:module} from '${1:path}'
+$0

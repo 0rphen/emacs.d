@@ -1,0 +1,5 @@
+# key: import
+# name: import
+# --
+import {${2:component}} from '${1:path}'
+$0

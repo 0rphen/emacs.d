@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: vimport
+# key: vimport
+# --
+import(/* webpackChunkName: "${1:name}" */ '${2:path}'),
+$0

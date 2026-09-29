@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: mutation
+# key: mutation
+# --
+export const ${1:mutationName} = ( ${2:state} ) => {
+       $0
+}

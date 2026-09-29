@@ -1,0 +1,11 @@
+# key: effect2
+# name: effect2
+# --
+@Effect()
+${1:name}$ = this._action$.pipe(
+    ofType(${2:actions}${3:action1}),
+    ${4:mergeMap}(${5:call} => this.${6:service}.pipe(
+        ${7:map}(${8:response} => $2${9:action2}),
+        catchError(err => of($2${10:action_error}({ payload: err })))
+    ))
+);
